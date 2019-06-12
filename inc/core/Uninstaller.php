@@ -21,7 +21,6 @@ abstract class Uninstaller
         return fclose($uninstall_file);
     }
 
-
     private static function code($path)
     {
         return '<?php

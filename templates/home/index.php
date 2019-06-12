@@ -35,6 +35,7 @@
                             <td><?= $publicity->creado_at ?></td>
                             <td>
                                 <form action="<?= popub_admin_post_url() ?>" method="post">
+                                    <?php wp_nonce_field('popub_publicity_delete', 'popub_nonce') ?>
                                     <input type="hidden" name="action" value="popub_publicity_delete">
                                     <input type="hidden" name="publicidad" value="<?= $publicity->id ?>">
                                     <button class="btn-link text-danger">

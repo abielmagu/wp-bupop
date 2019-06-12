@@ -20,10 +20,7 @@ $(document).ready(function() {
             $.ajax({
                 method: 'post',
                 url: $form.attr('action'),
-                data: {
-                    action: $form.find('input[name="action"]').val(),
-                    publicidad: $this.val()
-                }
+                data: $form.serialize()
             })
             .done( function(response) {
                 let notice = JSON.parse(response);

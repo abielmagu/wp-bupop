@@ -35,20 +35,24 @@ class SettingsController extends \Inc\Core\Controller
     public static function updateManual()
     {
         $request = self::request();
-        $model = new Settings;
-
-        if( $model->update(['publicidad_id' => $request['publicidad']], ['id' => 1]) )
+        
+        if( wp_verify_nonce( $request['popub_nonce'], 'popub_settings_update_manual') )
         {
-            echo json_encode([
-                'status' => true,
-                'element' => Notice::get('updated'),
-            ]);
-            return;
+            $model = new Settings;
+            if( $model->update(['publicidad_id' => $request['publicidad']], ['id' => 1]) )
+            {
+                echo json_encode([
+                    'status' => true,
+                    'element' => Notice::get('updated'),
+                ]);
+                return;
+            }
         }
         
         echo json_encode([
             'status' => false,
             'element' => Notice::get('error'),
         ]);
+        return;
     }
 }

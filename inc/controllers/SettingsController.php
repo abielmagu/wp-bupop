@@ -39,7 +39,7 @@ class SettingsController extends \Inc\Core\Controller
         if( wp_verify_nonce( $request['popub_nonce'], 'popub_settings_update_manual') )
         {
             $model = new Settings;
-            if( $model->update(['publicidad_id' => $request['publicidad']], ['id' => 1]) )
+            if( $model->update(['publicidad_id' => $request['manual']], ['id' => 1]) )
             {
                 echo json_encode([
                     'status' => true,

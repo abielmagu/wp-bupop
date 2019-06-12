@@ -15,6 +15,10 @@ class SettingsController extends \Inc\Core\Controller
     public static function update()
     {
         $request = self::request();
+
+        if(! wp_verify_nonce( $request['popub_nonce'], 'popub_settings_update') )
+            return wp_die('Validación incorrecta.');
+        
         $data = [
             'modo' => $request['modo'],
             'actualizado_at' => DATETIME_NOW,

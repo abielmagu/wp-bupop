@@ -15,6 +15,10 @@ class PublicityController extends Controller
     public static function store()
     {
         $request = self::request();
+        
+        if(! wp_verify_nonce( $request['popub_nonce'], 'popub_publicity_store') )
+            return wp_die('Validación incorrecta.');
+        
         $contract = PublicityContractFactory::make( $request['tipo'] );
 
         $data = [

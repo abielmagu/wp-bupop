@@ -48,6 +48,7 @@
                     </tbody>
                 </table>
                 <form action="<?= popub_admin_post_url() ?>" method="post" id="form-publicity-manual">
+                    <?php wp_nonce_field('popub_settings_update_manual', 'popub_nonce') ?>
                     <input type="hidden" name="action" value="popub_settings_update_manual">
                 </form>
             </div>

@@ -38,7 +38,7 @@
             </div>
             <br>
 
-            <input type="hidden" name="token" value="<?= popub_token() ?>">
+            <?php wp_nonce_field('popub_publicity_store', 'popub_nonce') ?>
             <input type="hidden" name="action" value="popub_publicity_store">
             <button class="button button-primary">Guardar publicidad</button>
         </div>

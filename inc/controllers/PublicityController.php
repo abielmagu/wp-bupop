@@ -38,8 +38,13 @@ class PublicityController extends Controller
 
     public static function delete()
     {
+        $request = self::request();
+
+        if(! wp_verify_nonce( $request['popub_nonce'], 'popub_publicity_delete') )
+            return wp_die('Validación incorrecta.');
+
         $model = new Publicity;
-        $publicity = $model->find( self::request('publicidad') );
+        $publicity = $model->find( $request['publicidad'] );
 
         $contract = PublicityContractFactory::make( $publicity->tipo );
         $contract->delete( $publicity );

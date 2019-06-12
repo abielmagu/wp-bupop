@@ -6,6 +6,7 @@ use Inc\Core\Session;
 use Inc\Core\Notice;
 use Inc\Core\Response;
 use Inc\Core\Filemanager;
+use Inc\Core\Uninstaller;
 
 class Popub
 {
@@ -84,6 +85,12 @@ class Popub
         {
             $model->createTables();
             $model->setDefaults();
+        }
+        
+        if(! Uninstaller::exists() )
+        {
+            $settings = Settings::values();
+            Uninstaller::generate( $settings );
         }
 
         return flush_rewrite_rules();

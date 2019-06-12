@@ -2,6 +2,11 @@
 
 abstract class Filemanager
 {
+    public static function getContent( $path )
+    {
+        return file_get_contents($path);
+    }
+
     public static function exists( $path )
     {
         return file_exists($path);

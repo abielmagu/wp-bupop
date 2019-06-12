@@ -24,6 +24,7 @@ $controls = array(
             <?php endforeach ?>
     
             <br>
+            <?php wp_nonce_field('popub_settings_update', 'popub_nonce') ?>
             <input type="hidden" name="action" value="popub_settings_update">
             <button class="button button-primary mt-4" type="submit">Actualizar</button>
         </div>

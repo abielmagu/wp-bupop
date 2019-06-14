@@ -9,7 +9,12 @@
     "autoload": {
         "psr-4": {
             "PopubPlugin\\": "./",
-            "Inc\\": "./inc"
+            "Inc\\": "./inc",
+            "Inc\\Core\\": "./inc/core",
+            "Inc\\Contracts\\": "./inc/contracts",
+            "Inc\\Controllers\\": "./inc/controllers",
+            "Inc\\Factories\\": "./inc/factories",
+            "Inc\\Interfaces\\": "./inc/interfaces"
         }
     }
 }

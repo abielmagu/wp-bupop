@@ -13,6 +13,11 @@ class ComposerStaticInitf281434579ef2575f805b11eb0502c17
         ),
         'I' => 
         array (
+            'Inc\\Interfaces\\' => 15,
+            'Inc\\Factories\\' => 14,
+            'Inc\\Core\\' => 9,
+            'Inc\\Controllers\\' => 16,
+            'Inc\\Contracts\\' => 14,
             'Inc\\' => 4,
         ),
     );
@@ -21,6 +26,26 @@ class ComposerStaticInitf281434579ef2575f805b11eb0502c17
         'PopubPlugin\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
+        ),
+        'Inc\\Interfaces\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/interfaces',
+        ),
+        'Inc\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/factories',
+        ),
+        'Inc\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/core',
+        ),
+        'Inc\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/controllers',
+        ),
+        'Inc\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/contracts',
         ),
         'Inc\\' => 
         array (

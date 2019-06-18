@@ -52,13 +52,20 @@ class Showtime
     {
         $url = get_stylesheet_directory_uri() . '/' . basename( $this->settings->ruta_imagenes ) . '/';
         $url_image = $url . $publicity->contenido;
-        return "<div style='display:none' id='popub-content'><img src='{$url_image}'></div>
+        $comment_title = $this->getElementCommentTitle( $publicity->titulo );
+        return $comment_title . "<div style='display:none' id='popub-content'><img src='{$url_image}'></div>
         <a data-fancybox data-src='#popub-content' href='javascript:;' id='popub-link'></a> \n";
 
     }
 
     private function getElementScript( $publicity )
     {
-        return stripslashes( html_entity_decode($publicity->contenido) );
+        $comment_title = $this->getElementCommentTitle( $publicity->titulo );
+        return $comment_title . stripslashes( html_entity_decode($publicity->contenido) );
+    }
+
+    private function getElementCommentTitle( $title )
+    {
+        return "<!-- Invasivo {$title} -->";
     }
 }
